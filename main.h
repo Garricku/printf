@@ -5,6 +5,28 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-int _printf(const char *format, ...);
+/*PROTOTYPES*/
+
+int _printf(const char *, ...);
+int prnt_char(va_list);
+int prnt_dec(va_list);
+int prnt_pec(va_list);
+int prnt_str(va_list);
+int prnt_int(va_list);
+int (*select_func(char *))(va_list);
+
+/*STRUCTS*/
+
+/**
+ * struct funcs - Stores functions to be used on string.
+ * @sp: The specifiers indentity.
+ * @func: The function to be called.
+ */
+
+typedef struct funcs
+{
+	char *sp;
+	int (*func)(va_list);
+} spec_op;
 
 #endif /* MAIN_H */

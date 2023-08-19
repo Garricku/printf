@@ -4,7 +4,7 @@
  *
  * Return: returns the count of chars printed.
  */
-int prnt_char(*ptr)
+int prnt_char(va_list)
 {
 	return (write(1, ptr, 1));
 }
@@ -15,7 +15,7 @@ int prnt_char(*ptr)
  *
  * Return: returns the count of chars printed.
  */
-int prnt_str(*ptr)
+int prnt_str(va_list)
 {
 	unsigned int length;
 
@@ -29,7 +29,7 @@ int prnt_str(*ptr)
  *
  * Return: return the number of chars printed.
  */
-int prnt_pec(*ptr)
+int prnt_pec(va_list)
 {
 	char c = '%';
 
@@ -43,7 +43,7 @@ int prnt_pec(*ptr)
  *
  * Return: returns the number of chars printed.
  */
-int prnt_dec(*ptr)
+int prnt_dec(va_list)
 {
 	return (write(1, ptr, length));
 }
@@ -54,7 +54,7 @@ int prnt_dec(*ptr)
  *
  * Return: returns the number of counts.
  */
-int prnt_int(*ptr)
+int prnt_int(va_list)
 {
 	return (write(1, ptr, length));
 }
