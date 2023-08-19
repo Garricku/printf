@@ -7,7 +7,7 @@
  * Return: The proper function needed for the formatted string.
  */
 
-int (*select_func(char *spec))(va_list)
+int (*select_fun(char spec))(va_list)
 {
 	int i;
 
@@ -15,14 +15,13 @@ int (*select_func(char *spec))(va_list)
 		{"c", prnt_char},
 		{"s", prnt_str},
 		{"%", prnt_pec},
-		{"d", prnt_dec},
-		{"i", prnt_int},
 		{NULL, NULL}
 	};
 
-	for (i = 0; ptrS[i].sp != NULL, i++)
+	for (i = 0; ptrS[i].sp != NULL; i++)
 	{
-		if ((*(ptrS[i].sp) == *spec) && (*(spec + 1) == '\0'))
+		if ((*(ptrS[i].sp) == spec))
 			return (ptrS[i].func);
 	}
+	return (NULL);
 }

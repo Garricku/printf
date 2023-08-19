@@ -13,7 +13,7 @@ int prnt_dec(va_list);
 int prnt_pec(va_list);
 int prnt_str(va_list);
 int prnt_int(va_list);
-int (*select_func(char *))(va_list);
+int (*select_fun(char))(va_list);
 
 /*STRUCTS*/
 

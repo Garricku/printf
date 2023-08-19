@@ -33,6 +33,7 @@ int _printf(const char *format, ...)
 				return (-1);
 			/*prints, return no. of cars printed and adds it to count variable*/
 			count += fptr(f_spec);
+		}
 	}
 
 

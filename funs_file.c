@@ -1,60 +1,43 @@
+#include "main.h"
+
 /**
  * prnt_char - prints a character.
- * @ptr: address of the character.
+ * @f_spec: va_list variable..
  *
  * Return: returns the count of chars printed.
  */
-int prnt_char(va_list)
+int prnt_char(va_list f_spec)
 {
-	return (write(1, ptr, 1));
+	char c = va_arg(f_spec, int);
+
+	return (write(1, &c, 1));
 }
 
 /**
  * prnt_str - prints a string
- * @ptr: address of string to be printed
+ * @f_spec: va_list variable..
  *
  * Return: returns the count of chars printed.
  */
-int prnt_str(va_list)
+int prnt_str(va_list f_spec)
 {
-	unsigned int length;
+	unsigned int length = 0;
+	char *str = va_arg(f_spec, char *);
 
-	length = strlen(ptr);
-	return (write(1, ptr, length));
+	while (str[length] != '\0')
+		length++;
+	return (write(1, str, length));
 }
 
 /**
  * prnt_pec - prints percent symbols.
- * @ptr: the address of pec.
+ * @f_spec: va_list variable..
  *
  * Return: return the number of chars printed.
  */
-int prnt_pec(va_list)
+int prnt_pec(va_list __attribute__((__unused__))f_spec)
 {
 	char c = '%';
 
-	ptr = &c;
-	return (write(1, ptr, 1));
-}
-
-/**
- * prnt_dec - prints decimals
- * @ptr: addres of num to be printed.
- *
- * Return: returns the number of chars printed.
- */
-int prnt_dec(va_list)
-{
-	return (write(1, ptr, length));
-}
-
-/**
- * prnt_int - prints an integer
- * @ptr: the address of integer to be printed
- *
- * Return: returns the number of counts.
- */
-int prnt_int(va_list)
-{
-	return (write(1, ptr, length));
+	return (write(1, &c, 1));
 }
