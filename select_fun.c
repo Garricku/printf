@@ -15,6 +15,8 @@ int (*select_fun(char spec))(va_list)
 		{"c", prnt_char},
 		{"s", prnt_str},
 		{"%", prnt_pec},
+		{"d", prnt_dec},
+		{"i", prnt_dec},
 		{NULL, NULL}
 	};
 
