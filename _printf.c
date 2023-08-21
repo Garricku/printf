@@ -12,11 +12,14 @@ int _printf(const char *format, ...)
 	/* count to store count chars printed, i for iteration */
 	int count = 0, i;
 	va_list f_spec;
+	char *str = (char *)format;
 	/*function pointer to receive function for printing specific case*/
 	int (*fptr)(va_list);
 
 	if (format == NULL)
 		return (-1);
+	if (_strlen(str) < 0)
+		return(-1);
 
 	va_start(f_spec, format);
 	for (i = 0; format[i]; i++)
