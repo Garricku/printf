@@ -54,10 +54,9 @@ int prnt_pec(va_list __attribute__((__unused__))f_spec)
 int prnt_dec(va_list f_spec)
 {
 	int num = (int)va_arg(f_spec, int);
-	char l_digit, c;
+	char l_digit, sl_digit, c;
 	int num_rev = 0, no_digits = 0, count = 0;
 
-	/* store last digit to avoid overflow & handle -*/
 	if (num < 0)
 	{
 		c = '-';
@@ -70,6 +69,8 @@ int prnt_dec(va_list f_spec)
 		l_digit = ((num % 10) + '0');
 		num /= 10;
 	}
+	sl_digit = ('0' + (num % 10));
+	num /= 10;
 
 	/* reversing the number */
 	for (no_digits = 0; (num > 0); no_digits++)
@@ -78,7 +79,6 @@ int prnt_dec(va_list f_spec)
 		num_rev += (num % 10);
 		num /= 10;
 	}
-
 	/* print reversed no. */
 	for (; (num_rev > 0); no_digits--)
 	{
@@ -88,6 +88,7 @@ int prnt_dec(va_list f_spec)
 	}
 	for (; no_digits != 0; no_digits--)
 		putchar('0');
+	count += write(1, &sl_digit, 1);
 	count += write(1, &l_digit, 1);
 	return (count);
 }
