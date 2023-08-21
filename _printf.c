@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	/* count to store count chars printed, i for iteration */
-	unsigned int count, i;
+	int count = 0, i;
 	va_list f_spec;
 	/*function pointer to receive function for printing specific case*/
 	int (*fptr)(va_list);

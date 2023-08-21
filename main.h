@@ -8,6 +8,7 @@
 /*PROTOTYPES*/
 
 int _printf(const char *, ...);
+int _strlen(char *);
 int prnt_char(va_list);
 int prnt_dec(va_list);
 int prnt_pec(va_list);

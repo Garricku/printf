@@ -21,7 +21,7 @@ int prnt_char(va_list f_spec)
  */
 int prnt_str(va_list f_spec)
 {
-	unsigned int length = 0;
+	int length = 0;
 	char *str = va_arg(f_spec, char *);
 
 	while (str[length] != '\0')
@@ -50,9 +50,9 @@ int prnt_pec(va_list __attribute__((__unused__))f_spec)
  */
 int prnt_dec(va_list f_spec)
 {
-	long num = va_arg(f_spec, long);
+	int num = va_arg(f_spec, int);
 	char l_digit, c;
-	long num_rev = 0, no_digits = 0, count = 0;
+	int num_rev = 0, no_digits = 0, count = 0;
 
 	/* store last digit to avoid overflow & handle -*/
 	if (num < 0)
