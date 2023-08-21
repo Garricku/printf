@@ -10,8 +10,7 @@
 int _printf(const char *format, ...)
 {
 	/* count to store count chars printed, i for iteration */
-	unsigned int count, i, j = 0, flag = 0;
-	char specs[] = "cs%di";
+	unsigned int count, i;
 	va_list f_spec;
 	/*function pointer to receive function for printing specific case*/
 	int (*fptr)(va_list);
@@ -26,23 +25,15 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '\0')
 				return (-1);
-			while (specs[j])
-			{
-				if (format[i + 1] == specs[j])
-					flag = 1;
-				j++;
-			}
-			if (flag)
-			{
-				/*get appropriate function for specified format specifier*/
-				fptr = select_fun(format[i + 1]);
-				if (fptr == NULL)
-					return (-1);
-				/*prints, return no. of cars printed and adds it to count variable*/
-				count += fptr(f_spec);
-			}
-			else
+			/*get appropriate function for specified format specifier*/
+			fptr = select_fun(format[i + 1]);
+			if (fptr == NULL)
 				count += write(1, &format[i], 1);
+			else
+			{
+				count += fptr(f_spec);
+				i++;
+			}
 		}
 		else
 			count += write(1, &format[i], 1);
