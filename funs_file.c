@@ -54,8 +54,11 @@ int prnt_pec(va_list __attribute__((__unused__))f_spec)
 int prnt_dec(va_list f_spec)
 {
 	int num = (int)va_arg(f_spec, int);
-	char l_digit, c;
+	char l_digit, c = 0;
 	int num_rev = 0, no_digits = 0, count = 0;
+
+	if (num == 0)
+		return(write(1, &c, 1));
 
 	/* store last digit to avoid overflow & handle -*/
 	if (num < 0)
