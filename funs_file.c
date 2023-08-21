@@ -53,7 +53,7 @@ int prnt_pec(va_list __attribute__((__unused__))f_spec)
  */
 int prnt_dec(va_list f_spec)
 {
-	int num = va_arg(f_spec, int);
+	int num = (int)va_arg(f_spec, int);
 	char l_digit, c;
 	int num_rev = 0, no_digits = 0, count = 0;
 
