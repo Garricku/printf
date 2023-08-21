@@ -24,6 +24,9 @@ int prnt_str(va_list f_spec)
 	int length = 0;
 	char *str = va_arg(f_spec, char *);
 
+	if (str == NULL)
+		str = "(null)";
+
 	while (str[length] != '\0')
 		length++;
 	return (write(1, str, length));
