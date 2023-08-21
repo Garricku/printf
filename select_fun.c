@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * select_func - Selects a function to decide what it prints.
+ * select_fun - Selects a function to decide what it prints.
  * @spec: The specifier recieved from _printf.
  *
  * Return: The proper function needed for the formatted string.

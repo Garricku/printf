@@ -37,11 +37,7 @@ int _printf(const char *format, ...)
 		}
 		else
 			count += write(1, &format[i], 1);
-		
 	}
-
-
-
 	va_end(f_spec);
 	return (count);
 }
