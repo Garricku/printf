@@ -98,27 +98,27 @@ int prnt_hexa_up(va_list f_spec)
 		{
 			if (sum == 10)
 			{
-				sum = 'a';
+				sum = 'A';
 			}
 			if (sum == 11)
 			{
-				sum = 'b';
+				sum = 'B';
 			}
 			if (sum == 12)
 			{
-				sum = 'c';
+				sum = 'C';
 			}
 			if (sum == 13)
 			{
-				sum = 'd';
+				sum = 'D';
 			}
 			if (sum == 14)
 			{
-				sum = 'e';
+				sum = 'E';
 			}
 			if (sum == 15)
 			{
-				sum = 'f';
+				sum = 'F';
 			}
 			s[i] = write(1, sum, 1);
 			count++;
