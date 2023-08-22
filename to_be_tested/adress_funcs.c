@@ -1,6 +1,6 @@
 /**
  * prnt_octa - Prints an octal address for %o specifier.
- * f_spec - va_list arguments from f_spec.
+ * @f_spec: Va_list arguments from f_spec.
  *
  * Return: The count for the octal address.
  */
@@ -31,7 +31,7 @@ int prnt_octa(va_list f_spec)
 }
 /**
  * prnt_hexa - Prints a low case hexadecimal num.
- * f_spec: The va_list arguments to be used.
+ * @f_spec: The va_list arguments to be used.
  *
  * Return: The count of the characters for hexa address.
  */
