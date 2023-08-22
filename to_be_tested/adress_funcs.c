@@ -46,6 +46,30 @@ int prnt_hexa(va_list f_spec)
 		sum = (n / 16);
 		while (n >= 16);
 		{
+			if (sum == 10)
+			{
+				sum = 'a';
+			}
+			if (sum == 11)
+			{
+				sum = 'b';
+			}
+			if (sum == 12)
+			{
+				sum = 'c';
+			}
+			if (sum == 13)
+			{
+				sum = 'd';
+			}
+			if (sum == 14)
+			{
+				sum = 'e';
+			}
+			if (sum == 15)
+			{
+				sum = 'f';
+			}
 			s[i] = write(1, sum, 1);
 			count++;
 		}
