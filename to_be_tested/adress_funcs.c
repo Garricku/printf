@@ -8,27 +8,25 @@
 int prnt_octa(va_list f_spec)
 {
 	int n = va_arg(f_spec, int);
-	int strt = n;
-	int result, count;
-
-	/*not sure about this, sorry*/
+	int result, i, count = 0; sum;
+	char *s;
 
 	/*trying to get base 8 here*/
-	while (n >= 1)
+	while (n > 0)
 	{
-		result = (n % 8) + '0';
-		n /= 8;
+		for (i = 0; i != '\0' && < n; i++)
+		s = malloc(sizeof(char) * i);
+		result = (n % 8);
+		sum = n /= 8;
+		while (n >= 8)
+		{
+			s[i] = write(1, sum, 1);
+			count++;
+		}
 	}
-
-	if (strt != 0)
-	{
-		count[i--] = '0';
-	}
-
-	i++;
-	/*this does not work properly*/
-	return (write(0, result, i));
+	return (write(1, s, i));
 }
+
 /**
  * prnt_hexa - Prints a low case hexadecimal num.
  * @f_spec: The va_list arguments to be used.
@@ -38,8 +36,12 @@ int prnt_octa(va_list f_spec)
 
 int prnt_hexa(va_list f_spec)
 {
-	/*not sure how to get this to work*/
-	/*need to try working on this later*/
+	int n = va_arg(f_spec, int);
+	while (n > 0)
+	{
+
+
+
 	return (prnt_hexa(f_spec, "0123456789abcdef"));
 }
 
@@ -52,6 +54,8 @@ int prnt_hexa(va_list f_spec)
 
 int prnt_hexa_up(va_list f_spec)
 {
+	int n = va_arg(f_spec, int);
+
 	/*it is still incomplete do not add to main code*/
 	/*trying to create the base 16 charaters*/
 	return (prnt_hexa_up(f_spec, "0123456789ABCDEF"));
