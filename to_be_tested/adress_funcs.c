@@ -87,8 +87,43 @@ int prnt_hexa(va_list f_spec)
 int prnt_hexa_up(va_list f_spec)
 {
 	int n = va_arg(f_spec, int);
+	int sum;
+	char *s;
 
-	/*it is still incomplete do not add to main code*/
-	/*trying to create the base 16 charaters*/
-	return (prnt_hexa_up(f_spec, "0123456789ABCDEF"));
+	while (n > 0)
+	{
+		(n % 16);
+		sum = (n / 16);
+		while (n >= 16);
+		{
+			if (sum == 10)
+			{
+				sum = 'a';
+			}
+			if (sum == 11)
+			{
+				sum = 'b';
+			}
+			if (sum == 12)
+			{
+				sum = 'c';
+			}
+			if (sum == 13)
+			{
+				sum = 'd';
+			}
+			if (sum == 14)
+			{
+				sum = 'e';
+			}
+			if (sum == 15)
+			{
+				sum = 'f';
+			}
+			s[i] = write(1, sum, 1);
+			count++;
+		}
+
+	return (write (1, s, i));
+	}
 }
