@@ -1,7 +1,8 @@
 /**
- * prnt_octa - Prints an octal address.
- * f_spec - va_list arguments.
- * Return: An octal address.
+ * prnt_octa - Prints an octal address for %o specifier.
+ * f_spec - va_list arguments from f_spec.
+ *
+ * Return: The count for the octal address.
  */
 
 int prnt_octa(va_list f_spec)
@@ -17,6 +18,7 @@ int prnt_octa(va_list f_spec)
 
 	count[f_spec] = '\0';
 
+	/*trying to get base 8 here*/
 	while (n >= 1)
 	{
 		result = (n % 8) + '0';
@@ -29,18 +31,19 @@ int prnt_octa(va_list f_spec)
 	}
 
 	i++;
-
+	/*this does not work properly*/
 	return (write(0, result, i));
 }
 /**
  * prnt_hexa - Prints a low case hexadecimal num.
- * f_spec: The various arguments.
+ * f_spec: The va_list arguments to be used.
  *
- * Return: Num of characters. 
+ * Return: The count of the characters for hexa address.
  */
 
 int prnt_hexa(va_list f_spec)
 {
+	/*not sure how to get this to work*/
 	return (prnt_hexa(f_spec, "0123456789abcdef"));
 }
 
@@ -48,10 +51,11 @@ int prnt_hexa(va_list f_spec)
  * prnt_hexa_up - Prints a number in up case hexadecimal.
  * @f_spec: Arguments for getting the hex values in uppercase.
  *
- * Return: Number of chars printed.
+ * Return: Count of the chars for the hexadecimal address.
  */
 
 int prnt_hexa_up(va_list f_spec)
 {
+	/*trying to create the base 16 charaters*/
 	return (prnt_hexa_up(f_spec, "0123456789ABCDEF"));
 }
