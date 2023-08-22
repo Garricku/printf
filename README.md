@@ -4,3 +4,5 @@ This repository contains a number of functions that are used to format a string 
 
 The _printf_ function uses various specifiers e.g. %s, %c, %d, %i.
 These specifier cause a call back of a function to format the user input to the desired output format.
+
+This repository contains a gitignore file.
