@@ -11,12 +11,7 @@ int prnt_octa(va_list f_spec)
 	int strt = n;
 	int result, count;
 
-	if (n >= 1)
-	{
-		count[i--] = '0';
-	}
-
-	count[f_spec] = '\0';
+	/*not sure about this, sorry*/
 
 	/*trying to get base 8 here*/
 	while (n >= 1)
@@ -44,6 +39,7 @@ int prnt_octa(va_list f_spec)
 int prnt_hexa(va_list f_spec)
 {
 	/*not sure how to get this to work*/
+	/*need to try working on this later*/
 	return (prnt_hexa(f_spec, "0123456789abcdef"));
 }
 
@@ -56,6 +52,7 @@ int prnt_hexa(va_list f_spec)
 
 int prnt_hexa_up(va_list f_spec)
 {
+	/*it is still incomplete do not add to main code*/
 	/*trying to create the base 16 charaters*/
 	return (prnt_hexa_up(f_spec, "0123456789ABCDEF"));
 }
