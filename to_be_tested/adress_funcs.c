@@ -46,7 +46,7 @@ int prnt_hexa(va_list f_spec)
 
 /**
  * prnt_hexa_up - Prints a number in up case hexadecimal.
- * @f_spec: All the arguments.
+ * @f_spec: Arguments for getting the hex values in uppercase.
  *
  * Return: Number of chars printed.
  */
@@ -54,37 +54,4 @@ int prnt_hexa(va_list f_spec)
 int prnt_hexa_up(va_list f_spec)
 {
 	return (prnt_hexa_up(f_spec, "0123456789ABCDEF"));
-}
-/**
- * prnt_hex - Prints a hexadecimal number in low or up case.
- * @f_spec: Args for getting the hex.
- *
- * Return: Number of chars printed.
- */
-
-int prnt_hex(va_list f_spec)
-{
-	int n = va_arg(f_spec, int);
-	int strt = n;
-
-	if (n == 0)
-	{
-		f_spec[i--] = '0';
-	}
-
-	while (n != 0 && n > 0)
-	{
-		f_spec[i--] = [n % 16];
-		n /= 16;
-	}
-
-	if (strt_n != 0)
-	{
-		f_spec[i--] = sp[i];
-		f_spec[i--] = '0';
-	}
-
-	i++;
-
-	return (write(1, f_spec, sp[i]));
 }
