@@ -8,7 +8,7 @@
 int prnt_octa(va_list f_spec)
 {
 	int n = va_arg(f_spec, int);
-	int result, i, count = 0; sum;
+	int i, count = 0; sum;
 	char *s;
 
 	/*trying to get base 8 here*/
@@ -16,7 +16,7 @@ int prnt_octa(va_list f_spec)
 	{
 		for (i = 0; i != '\0' && < n; i++)
 		s = malloc(sizeof(char) * i);
-		result = (n % 8);
+		(n % 8);
 		sum = n /= 8;
 		while (n >= 8)
 		{
@@ -37,12 +37,20 @@ int prnt_octa(va_list f_spec)
 int prnt_hexa(va_list f_spec)
 {
 	int n = va_arg(f_spec, int);
+	int sum;
+	char *s;
+
 	while (n > 0)
 	{
+		(n % 16);
+		sum = (n / 16);
+		while (n >= 16);
+		{
+			s[i] = write(1, sum, 1);
+			count++;
+		}
 
-
-
-	return (prnt_hexa(f_spec, "0123456789abcdef"));
+	return (write (1, s, i));
 }
 
 /**
